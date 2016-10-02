@@ -4,7 +4,10 @@
   "description": "A Weather app made with React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "open:dev": "webpack-dev-server",
+    "start": "npm-run-all --parallel lint:watch open:dev",
+    "lint": "node_modules/.bin/esw webpack.config.* src",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.2.2",
     "eslint-watch": "^2.1.14",
+    "npm-run-all": "^3.1.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
   }
